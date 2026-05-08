@@ -1,27 +1,27 @@
 import type { Metadata } from 'next'
-import ToolUploader from '@/components/ToolUploader'
+import PDFSummarizer from './Summarizer'
 import ToolPageContent from '@/components/ToolPageContent'
 import JsonLd from '@/components/JsonLd'
 import { toolsContent } from '@/lib/tools-content'
 
-const tool = toolsContent['compress-pdf']
+const tool = toolsContent['summarize-pdf']
 
 export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: {
-    canonical: 'https://vorzapdf.com/tools/compress-pdf',
-    languages: { 'nl-NL': 'https://vorzapdf.com/tools/compress-pdf', 'en-US': 'https://vorzapdf.com/en/tools/compress-pdf' },
+    canonical: 'https://vorzapdf.com/tools/summarize-pdf',
+    languages: { 'nl-NL': 'https://vorzapdf.com/tools/summarize-pdf', 'en-US': 'https://vorzapdf.com/en/tools/summarize-pdf' },
   },
   openGraph: {
     title: tool.title,
     description: tool.description,
-    url: 'https://vorzapdf.com/tools/compress-pdf',
-    images: [{ url: '/api/og?tool=compress-pdf', width: 1200, height: 630 }],
+    url: 'https://vorzapdf.com/tools/summarize-pdf',
+    images: [{ url: '/api/og?tool=summarize-pdf', width: 1200, height: 630 }],
   },
 }
 
-export default function CompressPdfPage() {
+export default function SummarizePDFPage() {
   const howToSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
@@ -50,22 +50,15 @@ export default function CompressPdfPage() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vorzapdf.com' },
-      { '@type': 'ListItem', position: 2, name: tool.nameNL, item: 'https://vorzapdf.com/tools/compress-pdf' },
+      { '@type': 'ListItem', position: 2, name: tool.nameNL, item: 'https://vorzapdf.com/tools/summarize-pdf' },
     ],
   }
 
   return (
     <>
       <JsonLd data={[howToSchema, faqSchema, breadcrumbSchema]} />
-      <div className="min-h-screen py-16 px-4">
-        <ToolUploader
-          toolId="compress-pdf"
-          title={tool.h1}
-          description="Verklein je PDF-bestand met behoud van kwaliteit."
-          accept=".pdf,application/pdf"
-          actionLabel="PDF Comprimeren"
-          outputLabel="Download Gecomprimeerd PDF"
-        />
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <PDFSummarizer />
         <ToolPageContent content={tool} />
       </div>
     </>

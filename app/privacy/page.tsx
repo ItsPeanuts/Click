@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | DocuTools AI',
-  description: 'Privacy policy for DocuTools AI. We respect your data.',
+  title: 'Privacy Policy | VorzaPDF',
+  description: 'Privacy policy for VorzaPDF. We respect your data.',
 }
 
 export default function PrivacyPage() {
@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       <p className="text-gray-500 mb-6">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
       <h2 className="text-xl font-semibold mt-8 mb-3">1. Files You Upload</h2>
-      <p className="text-gray-600">Files uploaded to DocuTools AI are processed entirely on our servers and are automatically and permanently deleted within 24 hours. We do not read, store, share, or sell your file contents. Files are processed in temporary memory and never stored permanently.</p>
+      <p className="text-gray-600">Files uploaded to VorzaPDF are processed entirely on our servers and are automatically and permanently deleted within 24 hours. We do not read, store, share, or sell your file contents. Files are processed in temporary memory and never stored permanently.</p>
 
       <h2 className="text-xl font-semibold mt-8 mb-3">2. Data We Collect</h2>
       <p className="text-gray-600">We collect minimal data: IP addresses for rate-limiting abuse prevention (not logged permanently), and payment details processed securely by Stripe. We do not create user accounts or store personal information beyond what Stripe requires for billing.</p>

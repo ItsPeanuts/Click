@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | DocuTools AI',
-  description: 'Terms of service for DocuTools AI.',
+  title: 'Terms of Service | VorzaPDF',
+  description: 'Terms of service for VorzaPDF.',
 }
 
 export default function TermsPage() {
@@ -12,7 +12,7 @@ export default function TermsPage() {
       <p className="text-gray-500 mb-6">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
       <h2 className="text-xl font-semibold mt-8 mb-3">1. Service Description</h2>
-      <p className="text-gray-600">DocuTools AI provides online document conversion tools including PDF to Word conversion, PDF compression, PDF merging, image to PDF conversion, and document to PDF conversion.</p>
+      <p className="text-gray-600">VorzaPDF provides online document conversion tools including PDF to Word conversion, PDF compression, PDF merging, image to PDF conversion, and document to PDF conversion.</p>
 
       <h2 className="text-xl font-semibold mt-8 mb-3">2. Free Tier</h2>
       <p className="text-gray-600">Free users may perform 1 file conversion per day. This limit is enforced per IP address and may be changed at our discretion.</p>
@@ -27,7 +27,7 @@ export default function TermsPage() {
       <p className="text-gray-600">The service is provided "as is" without warranties of any kind. We do not guarantee 100% conversion accuracy. Always keep originals of important documents.</p>
 
       <h2 className="text-xl font-semibold mt-8 mb-3">6. Limitation of Liability</h2>
-      <p className="text-gray-600">DocuTools AI is not liable for any damages arising from use of the service, including but not limited to loss of data or business interruption.</p>
+      <p className="text-gray-600">VorzaPDF is not liable for any damages arising from use of the service, including but not limited to loss of data or business interruption.</p>
 
       <h2 className="text-xl font-semibold mt-8 mb-3">7. Changes</h2>
       <p className="text-gray-600">We may update these terms at any time. Continued use of the service constitutes acceptance of the updated terms.</p>

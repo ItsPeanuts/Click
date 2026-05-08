@@ -24,8 +24,8 @@ export async function POST(req: NextRequest) {
     pdfDoc.setAuthor('')
     pdfDoc.setSubject('')
     pdfDoc.setKeywords([])
-    pdfDoc.setProducer('DocuTools AI')
-    pdfDoc.setCreator('DocuTools AI')
+    pdfDoc.setProducer('VorzaPDF')
+    pdfDoc.setCreator('VorzaPDF')
 
     const compressed = await pdfDoc.save({
       useObjectStreams: true,
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     const originalName = file.name.replace(/\.pdf$/i, '')
 
-    return new NextResponse(compressed, {
+    return new NextResponse(Buffer.from(compressed), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${originalName}-compressed.pdf"`,

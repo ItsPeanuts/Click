@@ -4,24 +4,24 @@ import ToolPageContent from '@/components/ToolPageContent'
 import JsonLd from '@/components/JsonLd'
 import { toolsContent } from '@/lib/tools-content'
 
-const tool = toolsContent['compress-pdf']
+const tool = toolsContent['split-pdf']
 
 export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: {
-    canonical: 'https://vorzapdf.com/tools/compress-pdf',
-    languages: { 'nl-NL': 'https://vorzapdf.com/tools/compress-pdf', 'en-US': 'https://vorzapdf.com/en/tools/compress-pdf' },
+    canonical: 'https://vorzapdf.com/tools/split-pdf',
+    languages: { 'nl-NL': 'https://vorzapdf.com/tools/split-pdf', 'en-US': 'https://vorzapdf.com/en/tools/split-pdf' },
   },
   openGraph: {
     title: tool.title,
     description: tool.description,
-    url: 'https://vorzapdf.com/tools/compress-pdf',
-    images: [{ url: '/api/og?tool=compress-pdf', width: 1200, height: 630 }],
+    url: 'https://vorzapdf.com/tools/split-pdf',
+    images: [{ url: '/api/og?tool=split-pdf', width: 1200, height: 630 }],
   },
 }
 
-export default function CompressPdfPage() {
+export default function SplitPDFPage() {
   const howToSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
@@ -50,21 +50,21 @@ export default function CompressPdfPage() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vorzapdf.com' },
-      { '@type': 'ListItem', position: 2, name: tool.nameNL, item: 'https://vorzapdf.com/tools/compress-pdf' },
+      { '@type': 'ListItem', position: 2, name: tool.nameNL, item: 'https://vorzapdf.com/tools/split-pdf' },
     ],
   }
 
   return (
     <>
       <JsonLd data={[howToSchema, faqSchema, breadcrumbSchema]} />
-      <div className="min-h-screen py-16 px-4">
+      <div className="max-w-4xl mx-auto px-4 py-12">
         <ToolUploader
-          toolId="compress-pdf"
+          toolId="split-pdf"
           title={tool.h1}
-          description="Verklein je PDF-bestand met behoud van kwaliteit."
-          accept=".pdf,application/pdf"
-          actionLabel="PDF Comprimeren"
-          outputLabel="Download Gecomprimeerd PDF"
+          description="Splits je PDF in losse pagina's. Je krijgt een ZIP met één PDF per pagina."
+          accept="application/pdf"
+          actionLabel="PDF Splitsen"
+          outputLabel="Download ZIP"
         />
         <ToolPageContent content={tool} />
       </div>
